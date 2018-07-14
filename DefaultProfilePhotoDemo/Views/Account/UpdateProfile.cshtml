@@ -1,0 +1,36 @@
+﻿@model UpdateProfileViewModel
+@{
+    ViewData["Title"] = "UpdateProfile";
+}
+
+<h2>UpdateProfile</h2>
+
+<div class="container" style="max-width:600px;">
+    <form asp-action="UpdateProfile" asp-controller="Account" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <div class="form-group">
+            <div class="container">
+                <input class="form-control" asp-for="FullName" placeholder="Full Name" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <div class="container">
+                <div class="custom-file">
+                    <input type="file" name="file" class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01"></label>
+                </div>
+                <div class="container mt-3">
+                    <img src="~/uploads/@Model.PhotoUrl" class="img-thumbnail" style="max-height:100px" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="container">
+                <button class="btn btn-darker mt-4 mb-3 w-100">Update profile</button>
+            </div>
+        </div>
+    </form>
+</div>

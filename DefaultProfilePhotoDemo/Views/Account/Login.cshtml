@@ -1,0 +1,31 @@
+﻿@model AccountLoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+<div class="container" style="max-width:600px">
+    <form asp-action="Login" asp-controller="Account" method="post" asp-route-returnurl="@Model.ReturnUrl">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <div class="container">
+                <input class="form-control" placeholder="User Name" asp-for="UserName" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="container">
+                <input class="form-control" placeholder="Password" asp-for="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="container">
+                <button type="submit" class="btn btn-primary mt-3 w-100">Sign in to Grande Travel &gt;&gt;</button>
+            </div>
+        </div>
+
+    </form>
+</div>
